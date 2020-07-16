@@ -2,14 +2,16 @@
 $(function() {
     $(".create").on("click", function(event) {
         event.preventDefault();
+        console.log("Burger changed");
       var id = $(this).data("id");
   
       // Send the PUT request.
-      $.ajax("/api/burger/" + id, {
-        type: "PUT",
+      $.ajax( {
+        method: "PUT",
+        url: "/api/burger/" + id
       }).then(
-        function() {
-          console.log("Burger changed");
+        function(data) {
+          console.log("Burger changed", data);
           // Reload the page to get the updated list
           location.reload();
         }

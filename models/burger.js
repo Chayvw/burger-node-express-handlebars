@@ -22,7 +22,7 @@ var burger
 //     });
 //   },
   update: function(condition, cb) {
-    orm.updateOne("burger", condition, function(res) {
+    orm.updateOne("burgers", "devoured = true", condition, cb, function(res) {
       cb(res);
     });
 }

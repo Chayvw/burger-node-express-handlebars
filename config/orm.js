@@ -28,13 +28,13 @@ var orm = {
             cb(result);
         });
     },
-        updateOne: function (updateBurger) {
-            var queryString = "UPDATE burger SET devoured = true WHERE ?? ";
-            connection.query(queryString,[updateBurger], function(err, result) {
+        updateOne: function (tableInput, cols, condition, cb) {
+            var queryString = "UPDATE " + tableInput + " SET " + cols + " WHERE " + condition;
+            connection.query(queryString, function(err, result) {
                 if (err) {
                   throw err;
                 }
-               console.lo(result);
+               console.log(result);
             }
 
             );
