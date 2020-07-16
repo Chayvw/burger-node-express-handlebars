@@ -7,7 +7,7 @@
 <ul>
   {{#each burger}}
     {{#unless devoured }}
-     <li class ="ndy"> <span>{{this.id}} {{name}}</span> <button>Devoure It</button></li>
+     <li class ="create" data-id={{this.id}}> <span>{{this.id}} {{name}}</span> <button >Devoure It</button></li>
     {{/unless }}
   {{/each}}
   
@@ -21,15 +21,26 @@
      <li class ="done"> {{this.id}} {{name}}</li>
     {{/if}}
   {{/each}}
+  </ul>
+
+{{!-- 
 </ul>
+<ul>
+    <li> <li>
+	{{name}}
+
+	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devoured}}">
+		{{#if devoured}} Devoure TIME!{{else}}EAT UP!{{/if}}
+	</button></li>
+</ul> --}}
 
     <div class="row justify-content-center">
-        <form id="ndyy">
+        <form id="new-burger">
             <textarea type="text" name="burger"></textarea>
     </div>
     <div class="row justify-content-center">
 
-        <button class="btn " type="submit" name="devoured">Submit</button>
+        <button class="btn" type="submit" name="devoured">Submit</button>
         </form>
     </div>
     <div class="row justify-content-center">

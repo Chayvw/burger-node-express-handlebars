@@ -1,14 +1,16 @@
 var orm = require("../config/orm.js");
 
-var burger = {
+var burger
+ = {
     selectAll: function(cb) {
-    orm.selectAll("burger", function(res) {
+    orm.selectAll("burgers", function(res) {
       cb(res);
     });
   },
   //
-  insertOne:function (cols, vals, cb) {
-    orm.insertOne("burger",cols, vals, cb, function(res) {
+  insertOne: function (name, cb) {
+    orm.insertOne( "burgers ", ["name", "devoured"], [name , false ], cb, function(res) {
+        console.log("I got here");
         cb(res);
       });
     },
@@ -19,11 +21,11 @@ var burger = {
 //       cb(res);
 //     });
 //   },
-//   update: function(objColVals, condition, cb) {
-//     orm.update("burger", objColVals, condition, function(res) {
-//       cb(res);
-//     });
-// }
+  update: function(condition, cb) {
+    orm.updateOne("burger", condition, function(res) {
+      cb(res);
+    });
+}
 
 };
 

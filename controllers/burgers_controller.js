@@ -16,13 +16,23 @@ router.get("/", function(req, res) {
   });
 });
 router.post("/api/burger", function(req, res) {
-    burger.insertOne([
-      "name", "devorued"
-    ], [
-      req.body.name, req.body.sleepy
-    ], function(result) {
-      // Send back the ID of the new quote
-      res.json({ id: result.insertId });
+    console.log(req.body)
+    burger.insertOne( req.body.name, function(result) {
+    
+      // Send back the reg.body of the new quote
+      console.log(result);
+      res.redirect("/");
     });
   });
+
+  router.put("/api/burger/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+    console.log("condition", condition);
+    burger.update(condition, function(result){
+        console.log(result)
+        res.redirect("/");
+    })
+});
+  
   module.exports= router;
+

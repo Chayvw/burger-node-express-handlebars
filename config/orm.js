@@ -10,7 +10,7 @@ var connection = require("../config/connection.js");
 //   }
 var orm = {
     selectAll: function(tableInput, cb) {
-      var queryString = "SELECT * FROM burgers";
+      var queryString = "SELECT * FROM " + tableInput + ';' ;
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
@@ -18,15 +18,28 @@ var orm = {
         cb(result);
     });
     },
-    insertOne: function(whatToInsert, cb) {
-        var queryString = "INSERT INTO burger VALUES ??";
-        connection.query(queryString,[whatToInsert], function(err, result) {
+    insertOne: function(tableInput, cols, vals, cb) {
+        var queryString = "INSERT INTO " + tableInput + " ("+ cols.toString() + ") VALUES ( "  + '?,?' + ")" ;
+        connection.query(queryString, vals , function(err, result) {
+            console.log("almost");
             if (err) {
               throw err;
             }
             cb(result);
         });
-    }
+    },
+        updateOne: function (updateBurger) {
+            var queryString = "UPDATE burger SET devoured = true WHERE ?? ";
+            connection.query(queryString,[updateBurger], function(err, result) {
+                if (err) {
+                  throw err;
+                }
+               console.lo(result);
+            }
+
+            );
+        }
+        
 
 }
 module.exports = orm;
