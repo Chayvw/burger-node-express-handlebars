@@ -2,12 +2,12 @@
 <h1>Eat Da Burger</h1>
 
 
-<h2> Burger </h2>
+<h2> Burgers I will like to eat! </h2>
 
 <ul>
   {{#each burger}}
     {{#unless this.devoured }}
-     <li class ="create" data-id={{this.id}}> <span>{{this.id}} {{name}}</span> <button >Devoure It</button></li>
+     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary" type="submit" data-id={{this.id}} >Devoure It</button></li>
     {{/unless }}
   {{/each}}
   
@@ -39,8 +39,9 @@
             <textarea type="text" name="burger"></textarea>
     </div>
     <div class="row justify-content-center">
+        <button type="submit" class="btn btn-primary" name="devoured">Submit Burger</button>
 
-        <button class="btn" type="submit" name="devoured">Submit</button>
+        {{!-- <button class="btn" type="submit" name="devoured">Submit</button> --}}
         </form>
     </div>
     <div class="row justify-content-center">

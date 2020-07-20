@@ -1,0 +1,9 @@
+body {
+    background-color: black;
+    color: white;
+     
+}
+.container {
+    height: 100vh;
+background: linear-gradient(#ff6f69, #ffcc5c);
+}
