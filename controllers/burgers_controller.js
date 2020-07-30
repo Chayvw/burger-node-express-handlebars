@@ -25,39 +25,39 @@ router.post("/api/burger", function (req, res) {
     });
 });
 
-router.put("/api/burgers/:id", function (req, res) {
-    var condition = "id = " + req.params.id;
-    console.log("condition", condition);
-    burger.update(condition, function (result) {
-        var hbsObject = {
-            burger: result
-        };
-        console.log("made it to the PUT response")
-        console.log(hbsObject)
-         res.render("index", hbsObject);
-    });
-});
 // router.put("/api/burger/:id", function (req, res) {
 //     var condition = "id = " + req.params.id;
-
-
 //     console.log("condition", condition);
-//     burger.update(condition, function (result) {
+//     burger.updateOne(condition, function (result) {
 //         var hbsObject = {
 //             burger: result
 //         };
-//         console/log("made it to the PUT resposne")
+//         console.log("made it to the PUT response")
 //         console.log(hbsObject)
-//         // res.render(200).end();
-//         res.render("index", hbsObject);
-//         // return res.sendStatus(200);
-
-
-
+//          res.render("index", hbsObject);
 //     });
-
-
 // });
+router.put("/api/burger/:id", function (req, res) {
+    var condition = "id = " + req.params.id;
+
+
+    console.log("condition", condition);
+    burger.updateOne(condition, function (result) {
+        var hbsObject = {
+            burger: result
+        };
+        console/log("made it to the PUT resposne")
+        console.log(hbsObject)
+        // res.render(200).end();
+        res.render("index", hbsObject);
+        // return res.sendStatus(200);
+
+
+
+    });
+
+
+});
 
 
 
