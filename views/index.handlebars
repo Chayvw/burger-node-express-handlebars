@@ -4,10 +4,25 @@
 
 <h2> Burgers I will like to eat! </h2>
 
+{{!-- <ul>
+  {{#each burger}}
+    {{#unless this.devoured_bool }}
+     <li > <span>{{this.id}} {{burger_name}}</span> <button class="btn btn-primary eatBurger" type="submit" data-id={{this.id}} >Devoure It</button></li>
+    {{/unless }}
+  {{/each}}
+</ul> --}}
+{{!-- <ul>
+  {{#each burger}}
+    {{#unless this.devoured_bool }}
+     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary eatBurger" type="submit" data-id={{this.id}} >Devoure It</button></li>
+    {{/unless }}
+  {{/each}}
+</ul> --}}
 <ul>
   {{#each burger}}
-    {{#unless this.devoured }}
-     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary" type="submit" data-id={{this.id}} >Devoure It</button></li>
+    {{#unless this.devoured_bool }}
+     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary eatBurger" type="submit" data-id={{this.id}} >Devoure It</button></li>
+     {{!-- class="btn btn-primary" type="submit" --}}
     {{/unless }}
   {{/each}}
   

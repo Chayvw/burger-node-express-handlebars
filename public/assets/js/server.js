@@ -43,7 +43,7 @@ $(function () {
         };
 
         // Send the PUT request.
-        $.ajax("/api/burgers/" + id, {
+        $.ajax("/api/burger/" + id, {
             type: "PUT",
             data: devouredState
         }).then(function () {

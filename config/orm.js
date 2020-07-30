@@ -27,6 +27,7 @@ var orm = {
                   throw err;
                 }
                console.log(result);
+               cb(result)
             }
 
             );
