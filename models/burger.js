@@ -15,12 +15,12 @@ var burger
     });
   },
 
-  //   // The variables cols and vals are arrays.
-  //   create: function(cols, vals, cb) {
-  //     orm.create("burger", cols, vals, function(res) {
-  //       cb(res);
-  //     });
-  //   },
+    // The variables cols and vals are arrays.
+    create: function(cols, vals, cb) {
+      orm.create("burger", cols, vals, function(res) {
+        cb(res);
+      });
+    },
 
   updateOne: function (tableInput, cols, condition, cb) {
     var queryString = "UPDATE " + tableInput + " SET " + cols + " WHERE " + condition;
@@ -33,11 +33,8 @@ var burger
       cb(result)
     });
   }
-  //   update: function(condition, cb) {
-  //     orm.updateOne("burgers", "devoured = true", condition, cb, function(res) {
-  //       cb(res);
-  //     });
-  // }
+ 
+  
 
 };
 

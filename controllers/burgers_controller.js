@@ -42,11 +42,11 @@ router.put("/api/burger/:id", function (req, res) {
 
 
     console.log("condition", condition);
-    burger.updateOne(condition, function (result) {
+    burger.updateOne("burgers", "devoured = true", condition, function (result) {
         var hbsObject = {
             burger: result
         };
-        console/log("made it to the PUT resposne")
+        console.log("made it to the PUT resposne")
         console.log(hbsObject)
         // res.render(200).end();
         res.render("index", hbsObject);
