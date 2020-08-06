@@ -7,7 +7,7 @@ $(function () {
         console.log(id)
 
         // Send the PUT request.
-      
+
     });
 
     $("#new-burger").on("submit", function (event) {

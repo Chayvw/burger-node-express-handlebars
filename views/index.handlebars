@@ -1,65 +1,42 @@
-<div class ="container">
-<h1>Eat Da Burger</h1>
+<div class="container">
+  <h1>Eat Da Burger</h1>
 
 
-<h2> Burgers I will like to eat! </h2>
+  <h2> Burgers I will like to eat! </h2>
 
-{{!-- <ul>
-  {{#each burger}}
-    {{#unless this.devoured_bool }}
-     <li > <span>{{this.id}} {{burger_name}}</span> <button class="btn btn-primary eatBurger" type="submit" data-id={{this.id}} >Devoure It</button></li>
-    {{/unless }}
-  {{/each}}
-</ul> --}}
-{{!-- <ul>
-  {{#each burger}}
-    {{#unless this.devoured_bool }}
-     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary eatBurger" type="submit" data-id={{this.id}} >Devoure It</button></li>
-    {{/unless }}
-  {{/each}}
-</ul> --}}
-<ul>
-  {{#each burger}}
+  <ul>
+    {{#each burger}}
     {{#unless this.devoured}}
-     <li > <span>{{this.id}} {{name}}</span> <button class="btn btn-primary eatburger" type="submit" data-id={{this.id}} >Devoure It</button></li>
-     {{!-- class="btn btn-primary" type="submit" --}}
+    <li> <span>{{this.id}} {{name}}</span> <button class="btn btn-primary eatburger" type="submit"
+        data-id={{this.id}}>Devoure It</button></li>
     {{/unless }}
-  {{/each}}
-  
-</ul>
+    {{/each}}
 
-<h2>Burgers that have been devoured!</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if devoured}}
-     <li class ="done"> {{this.id}} {{name}}</li>
-    {{/if}}
-  {{/each}}
   </ul>
 
-{{!-- 
-</ul>
-<ul>
-    <li> <li>
-	{{name}}
+  <h2>Burgers that have been devoured!</h2>
 
-	<button class="change-devour" data-id="{{id}}" data-newdevour="{{devoured}}">
-		{{#if devoured}} Devoure TIME!{{else}}EAT UP!{{/if}}
-	</button></li>
-</ul> --}}
+  <ul>
+    {{#each burger}}
+    {{#if devoured}}
+    <li class="done"> {{this.id}} {{name}}</li>
+    {{/if}}
+    {{/each}}
+  </ul>
 
-    <div class="row justify-content-center">
-        <form id="new-burger">
-            <textarea type="text" name="burger"></textarea>
-    </div>
-    <div class="row justify-content-center">
-        <button type="submit" class="btn btn-primary" name="devoured">Submit Burger</button>
 
-        {{!-- <button class="btn" type="submit" name="devoured">Submit</button> --}}
-        </form>
-    </div>
-    <div class="row justify-content-center">
-        <h6>Enter a burger you want to eat and click "Submit" to place your order</h6>
-    </div>
+
+  <div class="row justify-content-center">
+    <form id="new-burger">
+      <textarea type="text" name="burger"></textarea>
+  </div>
+  <div class="row justify-content-center">
+    <button type="submit" class="btn btn-primary" name="devoured">Submit Burger</button>
+
+    {{!-- <button class="btn" type="submit" name="devoured">Submit</button> --}}
+    </form>
+  </div>
+  <div class="row justify-content-center">
+    <h6>Enter a burger you want to eat and click "Submit" to place your order</h6>
+  </div>
 </div>
